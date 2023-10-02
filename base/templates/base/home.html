@@ -1,0 +1,90 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-center">
+		<h1>HOME</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card card-body h-100 border-info" id="profile-wrapper">
+				<img id="profile-pic" src="{% static 'images/jack/romania.jpg' %}" >
+				<hr>
+				<h4>Hi I'm Jack</h4><br>
+				<p>I'm a contract bioinformatician looking to get intimate with your data.</p>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="card card-body h-100 border-info">
+				<h4>Bioinformatician & Machine Learning Engineer</h4>
+				<hr>
+				<p>Having completed my Masters in Computer Science specialized in Artificial Intelligence in 2022 from the University of Freiburg, Germany, I began working as a bioinformatics consultant using my knowledge of single-cell RNA sequencing tools to analyze the gene expression profiles of new drugs as they move through clinical trials.</p>
+
+				<p>I've worked with 3 seperate labs doing various analyses ranging from differential gene expression detection for both bulk- and single-cell RNA seq data, identifying key mutations in variant calling format data, performing differential splicing analyses to understand genes affected by alterations to the spliceosome, as well as other tasks related to biological data analysis. More recently, I've been developing machine learning models to determine the key features involved in severe fibrotic liver tissues and the features involved in the shrinking of tumors given drug treatment. These models work to learn the most important relationships between genes in order to understand how novel drugs can reduce fibrosis and cancer.</p>
+
+				<ul class="social-links">
+					<li><a href="https://www.facebook.com/jackbrons17"><img class="social" src="{% static 'images/facebook.png' %}"></a></li>
+					<li><a href="https://www.linkedin.com/in/jack-brons-859051194"><img class="social" src="{% static 'images/linkedin.png' %}"></a></li>
+					<li><a href="https://github.com/jb994"><img class="social" src="{% static 'images/github.png' %}"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card card-body h-100">
+				<h5>Experience & Education</h5>
+				<p>I completed my Bachelors in Mathematics in 2019 at the University of Alberta and my Masters in Computer Science from the University of Freiburg, Germany in 2022. Specialized in artificial intelligence, I've focused my education on the various machine learning models at the forefront of the field and how to refine them to be able to tackle any task. My thesis in particular was on developing a novel method for projecting high-dimensional single-cell time-series datasets in the field of bioinformatics to produce more meaningful embeddings.</p>
+				<p>I've worked at multiple bioinformatics labs throughout my studies and currently work as a bioinformatics & machine learning consultant for Hepion Pharmaceuticals analysing multi-omics data to discover the mechanisms of novel drugs in the treatment of non-fatty alcoholic liver disease and various cancers.</p>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card card-body h-100">
+			<h5>What I Know</h5>
+			<hr>
+			<p>I'm fluent in Python and am knowledgeable in many of its packages including but not lmited to: Numpy, Pandas, Django, Scikit-learn, Tensorflow, Scanpy, etc., as well as the visualization packages Matplotlib, Seaborn, and Plotly.
+			<br><br>
+			I've worked extensively with R as it is the default programming language for most bioinformatics softwares such as DESeq, EdgeR, WGCNA, Seurat, etc. Additionally, I have some limited javascript experience.
+			<br><br>
+			My education was largely focused on artificial intelligence and has allowed me to accumulate a strong understanding of various machine learning techniques including regression, decision trees and their variants, deep-neural networks, convolutional neural networks, & generative adversarial networks.
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card card-body h-100">
+				<h5>A Photo of my Dog</h5><br>
+				<img src="{% static 'images/charlotte.jpeg' %}" alt="Little Charlotte" 
+				width=100%;
+  				height= 100%;><br>
+  				<p align="center"> This is Charlotte </p>
+			</div>
+			
+		</div>
+		<div class="col-md-6">
+			<div class="card card-body h-100">
+				<h5>My Short Term Goals</h5>
+				<hr>
+				<p>	
+					My short term hope is to further refine my knowledge of bioinformatic techniques and analyses and extend my capabilities into other realms. Part of being a bioinforamtician is learning how to learn and broaden your knowledge of new types of data and new types of analyses. Having the opportunity to work with new types of data in the future is probably then my most pressing goal.
+					<br><br>
+					Additionally, after having lived in Germany for a year and a half pursuing my Master's Degree I realized how much I loved my time there and hope to return to living in the EU in the near future. Being an avid traveller, I loved being able to experience the different cultures first hand and from within. Being able to return to living in Germany or elsewhere in the EU would be a dream for me.
+				</p>
+			</div>
+		</div>
+	</div>
+	<br>
+
+</div>
+
+{% endblock %}
+</html>

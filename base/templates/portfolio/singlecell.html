@@ -1,0 +1,136 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPORTFOLIO</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="card card-body h-100 border-info" id="profile-wrapper">
+			<h2>&nbsp&nbspSingle-Cell RNA-Seq</h2>
+			<hr>
+			<div class="row">
+				<div class="col-md-6">
+					
+					<p align="left">
+						Single-cell RNA sequencing technology has gained increasing popularity in recent years as a technique to quantify the transcript reads of given tissues. By marking individual cells with unique 'barcodes' researchers can observe at the single-cell level the expression of genes involved in various pathways. Part of the problem with the rapid rise in the use of single-cell technology however is the lack of widespread knowledge in the methods necessary to ensure the quality and significance of these novel datasets.
+					</p>
+				</div>
+				<div class="col-md-6">
+					<img src="{% static 'images/portfolio/tSNE.png' %}" 
+					width=100%;
+  					height= 100%;>
+				</div>
+			</div>
+			<br>
+			<div class='row'>
+				<div class="col-md-12">
+					<p align="left">
+						Using an ML clustering technique known as the "Leuven" algorithm these thousands of cells are grouped based on the similarity of their gene expression so we can make out discernable patterns bewteen the different cell types as shown above.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						Using online references for the marker genes of different cells, the different cell types previously determined are then annotatied. With the cell types of these groups now determined one can investigate the effectos of a given treatment on the individual cell types such as macrophages, T cells, hepatocytes, etc. A few marker genes used to determine the cell types of each group are shown below with "Cd79a" being a known marker for B cells, "Siglech" being a known marker for plasmacytoid dendritic cells, and "S100a8" being a marker gene for Neutrophils.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<img src="{% static 'images/portfolio/combinedClustersTSNE_Cd79a.png' %}" 
+					width=100%;
+  					height= 100%;>
+				</div>
+				<div class="col-md-4">
+					<img src="{% static 'images/portfolio/combinedClustersTSNE_Siglech.png' %}"
+					width=100%;
+  					height= 100%;>
+				</div>
+				<div class="col-md-4">
+					<img src="{% static 'images/portfolio/combinedClustersTSNE_S100a8.png' %}" 
+					width=100%;
+  					height= 100%;>
+				</div>
+			</div>
+
+			<br>
+			<hr>
+			<br>
+
+			<div class="row">
+				<div class="col-md-7">
+					<br><br><br>
+					<p align="left">
+						On the right is an interactive chart to give an idea of the breakdown of cells over a few given treatments. Using these cell types we can now perform differential expression tests to determine if for example macrophages within our vehicle and drug treatments show significant differences in their gene expression profiles.
+					</p>
+					<br>
+					<p align="left">
+						Some cell types are less present in some treatments than others. This is typically more of an indication of problems with sampling and collection than with any treatment effect. The treatments however which do have large enough numbers of particular cell types can now be compared though.
+					</p>
+					<br>
+				</div>
+				<div class="col-md-5">
+					<a href="/portfolio/singlecell/cellTypes"><img src="{% static 'images/portfolio/cellTypes.png' %}" 
+					width=100%;
+  					height= 100%;></a>
+				</div>
+			</div>
+
+			<br>
+			<hr>
+			<br>
+
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						Below on the left is another interactive plot called a Volcano Plot. Performing a differential expression analysis on each celltype revealed the genes which were either most significantly up- or down- regulated. Using a threshold of |log2 Fold-Change| >= 1.0 a few important genes can be singled out and investigated. Hovering over each dot will indicate what gene it is and in which cell type the significance comes from.
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8">
+					<p align="left">
+					</p>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<a href="/portfolio/singlecell/volcano-plot"><img src="{% static 'images/portfolio/Normal_Vehicle_scVolcano.png' %}" 
+					width=100%;
+  					height= 100%;></a>
+				</div>
+				<div class="col-md-3"></div>
+				
+			</div>
+
+			<br><hr><br>
+
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						Additionally, using the information of differentially expressed genes within each cell type one can construct an interactive network graph of each gene with its relationship to each of the other differentially expressed genes. With each node being a gene and each edge indicating genes which were differentially expressed in the same cell type, one can visualize the most important genes given a treatment and see which other genes were differentially expressed within their cell types. As a note, because the graph is quite large it can be slow to open.
+					</p>
+				</div>
+			</div>
+
+			<div class='row'>
+				<div class="col-md-9">
+					<a href="/portfolio/singlecell/gene-net"><img src="{% static 'images/portfolio/NormalxVehicle_2.0lfc_NET.png' %}" 
+					width=100%;
+  					height= 100%;></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+</html>

@@ -1,0 +1,105 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPORTFOLIO</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="card card-body h-100 border-info" id="profile-wrapper">
+			<h2>&nbsp&nbspMachine Learning for Mechanism Discovery</h2>
+			<hr><br>
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						Machine learning is a field which has spread into nearly every field recently due to its abililty to discover patterns within datasets and use those features to both explain the mechanisms behind certain patterns or using them to predict the values of responding variables. In bioinformatics this usefulness is especially pronounced as being able to discover patterns and relationships within tens of thousands of genes over dozens of samples is something which would be impossible otherwise. The job then of creating these models and discovering these patterns is essential for any modern biological scientist.
+						<br><br>
+						Below are some examples of projects I've done in the past to tackle these tasks:
+					</p>
+				</div>
+			</div>
+			<br>
+			<hr>
+			<br>
+			<div class="row">
+				<h4>1. Boosted Decision Trees & Random Forests</h4>
+				<br><br>
+			</div>
+			<div class="row">
+				<div class="col-md-7">
+					<p align="left">
+						<br>
+						In order to find the most important features involved in the reduction of fibrotic liver disease I've made use of a machine learning model known as a "Decision Tree" and its variants. Boosted decision trees and random forests take the given data and learn to split each sample into groups which best explain the fibrotic outcomes. These genes are scored based on how well they split the data and using this one can determine which genes are the most influential given your data. 
+						<br><br>
+						The example below was generated using bulk RNA-seq data from 58 samples across 4 different experiments including 3 different species which naturally can produce large amounts of noise in the data due to the inherent variability within the populations as well as different experimental conditions. Nonetheless, the models managed to indentify various key genes related to fibrosis outcomes with multiple of these genes being previous shown in the literature to be key factors in significant processes. 
+					</p>
+				</div>
+				<div class="col-md-5">
+					<img src="{% static 'images/portfolio/decisionTreeBarplot.png' %}" 
+					width=100%;
+  					height= 100%;>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						<br>
+						From the barplot and decision tree produced by the model one can see the gene Gprasp1 was the most significant gene in explaining Sirius Red %s in certain samples. The decision tree indicates that four samples with very high sirius red levels were distinct from all the other samples based on the high levels of Gprasp1 in their tissues. While this gene explains sirius red levels for these 4 extreme cases it appears Mmp2 is a more important gene in explaining sirius red as it splits 21 and 32 samples based on their expression levels and these expression levels very highly relate to the fibrosis levels. Referencing the gene through the literature Mmp2 is an already known gene related to disfunction in liver fibrosis.
+					</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<img src="{% static 'images/portfolio/decisionTreew5.png' %}" 
+					width=100%;
+  					height= 100%;>
+				</div>
+			</div>
+			<br><hr><br>
+			<div class="row">
+				<h4>2. Weighted Gene Correlational Network Analysis (WGCNA) & Key Drivers</h4>
+				<div class="col-md-6">
+					<p align="left">
+						<br>Weighted Gene Correlational Networks are machine learning models designed to take RNA-Seq data and learn to group genes into "modules" which share common expression patterns across various samples and then correlate these groups to certain responding variables (tumor volumes, levels of fibrosis, etc.). In this way the model hopes to sift through the many genes which correlate with your variable but which may not be biologically relevant. Once the most important modules are found one can perform a key driver analysis to find the genes which are most important in explaining variance among these highly correlated genes.<br>
+					</p>
+					<br>
+					<p align="left">
+						Important modules can also then be used as input for pathway analyses. Selecting the modules with the highest correlation to your variable of choice allows a researcher to focus in on the most important pathways involved with whatever treatment is being studied.
+					</p>
+				</div>
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-5">
+					<img src="{% static 'images/portfolio/cytoscapeKeyDrivers.png' %}" 
+					width=100%;
+  					height= 100%;>
+				</div>
+			</div>
+			<br><hr><br>
+			<div class="row">
+				<h4>3. Master Regulator Analysis</h4>
+				<div class="col-md-12">
+					<p align="left">
+						<br>
+						Master regulator analysis is a method of determing genes upstream from some of the genes highly effected by a given treatment and determining the root cause of systematic differences in the transcriptomic data. Using the available sources on gene pathways and the given transcriptomic data this anlysis is useful to find the most important regulating genes in a given phenotype.
+						<br>
+					</p>
+				</div>
+			<div class="row">
+				<div class="col-md-12">
+					<img src="{% static 'images/portfolio/mraAnalysisFull.png' %}" 
+					width=100%;
+  					height= 100%;>
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+</html>

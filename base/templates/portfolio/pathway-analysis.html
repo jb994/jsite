@@ -1,0 +1,62 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPORTFOLIO</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="card card-body h-100 border-info" id="profile-wrapper">
+			<h2>&nbsp&nbspOntology & Pathway Analysis</h2>
+			<hr>
+			<div class="row">
+				<div class="col-md-7">
+					<p align="left">
+						<br><br>
+						In conjunction with information from other analyses, I can take the important genes or proteins of a dataset and put them through a pathway enrichment to determine the most pathways most imvolved in a given disease state or drug treatment.<br>
+						<br>
+						Differentially expressed gene lists, WGCNA modules of genes, list of differentially spliced genes, or any other list of genes connected with a given treatment can be put through a pathway enrichment to uncover the underlying mechanisms at play.
+					</p>
+				</div>
+				<div class="col-md-5">
+					<img src="{% static 'images/portfolio/pi3kKEGG.png' %}"
+					width=100%;
+  					height=100%;>
+				</div>
+			</div>
+			<br><hr><br>
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+					Various different databases can be referenced for pathway enrichment in order to get the data most relevant to the treatment. A few examples of databases available to perform enrichment with include:<br>
+					&nbsp&nbsp&nbsp - KEGG 2021<br>
+					&nbsp&nbsp&nbsp - GO Biological Pathways<br>
+					&nbsp&nbsp&nbsp - Reactome<br>
+					&nbsp&nbsp&nbsp - Wikipathways<br>
+					&nbsp&nbsp&nbsp - PPI Hub Proteins<br>
+					&nbsp&nbsp&nbsp - etc.<br>
+					<br>
+				</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<img src="{% static 'images/portfolio/pathwayEnrichment/KEGG_2021_Human.png' %}"
+					width=100%;
+  					height=100%;>
+				</div>
+				<div class="col-md-6">
+					<img src="{% static 'images/portfolio/pathwayEnrichment/Reactome_2022.png' %}"
+					width=100%;
+  					height=100%;>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+</html>

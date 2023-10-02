@@ -1,0 +1,70 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPORTFOLIO</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="card card-body h-100 border-info" id="profile-wrapper">
+			<h2>&nbsp&nbspDifferential Splicing Analysis</h2>
+			<hr>
+
+			<div class="row">
+				<div class="col-md-12">
+					<br>
+					<p align="left">
+						Gene splicing is the process by which cells combine exons and introns into fully functioning genes. Some genes can be expressed in many differnent forms and with varying functions based on how their exons are combined together. As a result in certain cases it is useful to understand the ways genes can be compiled into their finished states and the ways this process alters cell and tissue function.
+					</p>
+					<br>
+					<p align="left">
+						No single software for performin differentioal splicing anlaysis has risen to be the most effective or industry standard for the process. Additionally, <a href="https://academic.oup.com/bib/article/21/6/2052/5648232" >Mehmood et al.</a> in their systematic evaluation of various tools in the field found there was a large amount of variability in the conclusions drawn depending on which tool you use. As a result, it is useful to try multiple softwares and to look for results which overlap between them or which confirm knowledge previous found in literature on the topic.
+					</p>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-5">
+					<img src="{% static 'images/portfolio/DEXSeqSplicingItgb1.png' %}"
+					width=100%;
+  					height=100%;>
+				</div>
+				<div class="col-md-0.5"></div>
+				<div class="col-md-5">
+					<img src="{% static 'images/portfolio/edgeRSplicingItgb1.png' %}"
+					width=100%;
+  					height=100%;>
+				</div>
+			</div>
+
+			<br><br>
+
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						Using the information about which exons are differentially expressed one can then cross-reference it back to known information about the different isoforms which can result from the splicing to get a better idea of exactly what effect the difference in splicing could be causing. Below for the gene Espr1, the exons coloured purple have been determind to show differences in proportions between the two treatments which lines up with known isoforms of the gene.
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-10">
+					<img src="{% static 'images/portfolio/Elp5_DiffTranscripts.png' %}"
+					width=100%;
+  					height=100%;>
+				</div>
+				<div class="col-md-1">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+</html>

@@ -1,0 +1,79 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPORTFOLIO</h1>
+	</div>
+	<hr>
+	<div class="card card-body h-100">
+		<div class="row">
+			<div class="col-md-6">
+				<a href="/portfolio/singlecell" style="font-size:20px; color:black">Single-Cell RNA-Seq</a>
+				<p><br>I have worked both in industry and have written my Master's thesis on the analysis of single-cell RNA-seq data. In a working capacity, I have performed analaysis on these datasets to uncover the genetic pathways involved in the effects of novel drugs working through the steps of alignment, quality control, filtering & read normalization, regression out of certain biological quality markers such as mitochondrial read counts, dimensional reduction (PCA, UMAP, & tSNE), hierarchical clustering, and differential expression analysis.</p>
+			</div>
+			<div class="col-md-6">
+				<a href="/portfolio/singlecell"><img src="{% static 'images/portfolio/tSNE.png' %}" 
+				width=100%;
+  				height= 100%;>
+			</div>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div class="row">
+			<div class="col-md-5">
+				<a href="/portfolio/ml-models"><img src="{% static 'images/portfolio/decisionTree.png' %}"
+				width=100%;
+  				height=100%;>
+			</div>
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-6">
+				<a href="/portfolio/ml-models" style="font-size:20px; color:black">Machine Learning for Mechanism Discovery</a>
+				<p><br>The process of discovering drug mechanisms and the key markers of novel treatments is a task that has been greatly improved with the use of machine learning models. By fine-tuning models to multi-omics datasets these ML models can learn to find the key genes and features related to drug or treatment outcomes.</p>
+			</div>
+		</div>		
+		<br>
+		<hr>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<a href="/portfolio/splicing" style="font-size:20px; color:black">Differential Splicing Analysis</a>
+				<p><br>The differential splicing of introns and exons into unique isoforms plays a major role in the effectiveness of proteins. By statistically determining the differentially expressed exons between different treatments researchers can gain a new understanding of the mechanisms at play both within diseases or in reponse to drug intervention.</p>
+			</div>
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-5">
+				<a href="/portfolio/splicing"><img src="{% static 'images/portfolio/DEXSeqSplicingItgb1.png' %}"
+				width=100%;
+  				height=100%;>
+			</div>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div class="row">
+			<div class="col-md-5">
+				<a href="/portfolio/pathway-analysis"><img src="{% static 'images/portfolio/pi3kKEGG.png' %}" 
+				width= 100%;
+  				height= 100%;>
+			</div>
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-6">
+				<a href="/portfolio/pathway-analysis" style="font-size:20px; color:black">Ontology & Pathway Analysis</a>
+				<p><br>In order to understand the complex biological pathways not attributable to single genes it is sometimes necessary to dive deeper into the ontologies and pathways involved in the tissues of given samples. Using some of the modern machine learning techniques available to researchers (Genewalk, Key Driver Analyses, etc.), I've analyzed next-gen sequencing data to discover modules of genes relevant to the affects of drug treatment, isolated the most important pathways in which these modules are involved uncovered the "Key Drivers" within these modules to determine the most essential players involved in treatment outcomes.</p>
+			</div>
+		</div>
+		<br>
+
+	</div>
+	<br>
+</div>
+{% endblock %}
+</html>

@@ -1,0 +1,49 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspCONTACT</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<img src="{% static 'images/portfolio/aceWNC.jpg' %}" 
+					width=100%;
+  					height= 100%;>
+		<div class="card card-body h-100 border-info" id="profile-wrapper">
+			<br>
+		<div class="row">
+			<div class="col-md-12">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p align="left"> If you would like to ask for more information, inquire about my servies, or would just like to chat, I currently live in Edmonton, Canada, and the best ways to reach me are below: 
+				</p>
+				<p align="left"> 
+					&emsp;&emsp; Jack Brons<br>
+					&emsp;&emsp; Email: jbrons17@gmail.com<br>
+					&emsp;&emsp; Phone: +1 (780) 916-9789<br>
+					&emsp;&emsp; Socials:
+
+				<ul class="social-links">
+					<li><a href="https://www.facebook.com/jackbrons17"><img class="social" src="{% static 'images/facebook.png' %}"></a></li>
+					<li><a href="https://www.linkedin.com/in/jack-brons-859051194"><img class="social" src="{% static 'images/linkedin.png' %}"></a></li>
+					<li><a href="https://github.com/jb994"><img class="social" src="{% static 'images/github.png' %}"></a></li>
+				</ul></p>
+
+
+				<p>
+				
+				</p>
+			</div>
+			<div class="col-md-8"></div>
+		</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+</html>
