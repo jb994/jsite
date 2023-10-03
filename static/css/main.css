@@ -21,6 +21,7 @@ ul{
 }
 
 
+
 .social-links ul, li{
 	list-style-type: none;
 	display: inline-block;
@@ -29,4 +30,12 @@ ul{
 .social{
 	width: 20px;
 	height: 20px;
+}
+
+img: { width: 100% }
+
+@media(max-width: 768px) {
+	img{
+   		flex-grow: 1;
+  	}
 }
