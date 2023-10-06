@@ -64,15 +64,12 @@
 				<div class="col-md-6">
 					<p align="left">
 						<br>Weighted Gene Correlational Networks are machine learning models designed to take RNA-Seq data and learn to group genes into "modules" which share common expression patterns across various samples and then correlate these groups to certain responding variables (tumor volumes, levels of fibrosis, etc.). In this way the model hopes to sift through the many genes which correlate with your variable but which may not be biologically relevant. Once the most important modules are found one can perform a key driver analysis to find the genes which are most important in explaining variance among these highly correlated genes.<br>
-					</p>
-					<br>
-					<p align="left">
+						<br>
 						Important modules can also then be used as input for pathway analyses. Selecting the modules with the highest correlation to your variable of choice allows a researcher to focus in on the most important pathways involved with whatever treatment is being studied.
 					</p>
 				</div>
-				<div class="col-md-1">
-				</div>
-				<div class="col-md-5">
+				<div class="col-md-6">
+					<br>
 					<img src="{% static 'images/portfolio/cytoscapeKeyDrivers.png' %}" 
 					width=100%;>
 				</div>
