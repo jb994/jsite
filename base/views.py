@@ -27,6 +27,9 @@ def gene_net(request):
 def ml_models(request):
 	return render(request, 'portfolio/ml-models.html')
 
+def predictive_medicine(request):
+	return render(request, 'portfolio/predictive-medicine.html')
+
 def splicing(request):
 	return render(request, 'portfolio/splicing-analysis.html')
 

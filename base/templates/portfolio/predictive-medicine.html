@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPORTFOLIO</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="card card-body h-100 border-info" id="profile-wrapper">
+			<h2>&nbsp&nbspMachine Learning for Predictive Medicine</h2>
+			<hr><br>
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						The drug development process is one which is both expensive and time intensive, taking decades just to get a drug tested, approved, and to market. As such, decisions about the safety of the drug and the conditions it can be used to treat need to be made intelligently and efficiently to ensure the drug's usefulness can be fully revealed at minimal cost. Machine learning is one of the tools which can perform this task, taking known information about a drug and extending it to new domains to better prioritize future research. Below is an example of where I had created a machine learning model to better understand how a novel drug affects gene expression within samples of hepatocellular carcinoma which then was able to utilize these patterns to predict other candidate cancer types which this drug could potentially be effective to treat.
+					</p>
+				</div>
+			</div>
+			<br>
+			<hr>
+		</div>
+	</div>
+	<br>
+</div>
+{% endblock %}
+</html>
