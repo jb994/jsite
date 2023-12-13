@@ -33,9 +33,9 @@
 				<div class="col-md-7">
 					<p align="left">
 						<br>
-						In order to find the most important features involved in the reduction of fibrotic liver disease I've made use of a machine learning model known as a "Decision Tree" and its variants. Boosted decision trees and random forests take the given data and learn to split each sample into groups which best explain the fibrotic outcomes. These genes are scored based on how well they split the data and using this one can determine which genes are the most influential given your data. 
+						In order to find the most important features involved in the reducing the size of liver tumors, I've made use of a machine learning model known as a "Decision Tree" and its variants. Boosted decision trees and random forests take the given data and learn to split each sample into groups which best explain the tumor outcomes. These genes are scored based on how well they split the data and using this one can determine which genes are the most influential given your data. 
 						<br><br>
-						The example below was generated using bulk RNA-seq data from 58 samples across 4 different experiments including 3 different species which naturally can produce large amounts of noise in the data due to the inherent variability within the populations as well as different experimental conditions. Nonetheless, the models managed to indentify various key genes related to fibrosis outcomes with multiple of these genes being previous shown in the literature to be key factors in significant processes. 
+						The example below was generated using bulk RNA-seq data from 58 samples across 4 different experiments including 3 different species which naturally can produce large amounts of noise in the data due to the inherent variability within the populations as well as different experimental conditions. Nonetheless, the models managed to indentify various key genes related to cancer outcomes with multiple of these genes being previous shown in the literature to be key factors in significant processes. 
 					</p>
 				</div>
 				<div class="col-md-5">
@@ -47,7 +47,7 @@
 				<div class="col-md-12">
 					<p align="left">
 						<br>
-						From the barplot and decision tree produced by the model one can see the gene Gprasp1 was the most significant gene in explaining Sirius Red %s in certain samples. The decision tree indicates that four samples with very high sirius red levels were distinct from all the other samples based on the high levels of Gprasp1 in their tissues. While this gene explains sirius red levels for these 4 extreme cases it appears Mmp2 is a more important gene in explaining sirius red as it splits 21 and 32 samples based on their expression levels and these expression levels very highly relate to the fibrosis levels. Referencing the gene through the available literature, Mmp2 is an already known gene related to dysfunction in liver fibrosis.
+						From the barplot and decision tree produced by the model one can see the gene Gprasp1 was the most significant gene in explaining tumor volumes in certain samples. The decision tree indicates that four samples with very large tumor volumes were distinct from all the other samples based on the high levels of Gprasp1 in their tissues. While this gene explains the tumor sizes for these 4 extreme cases, it appears Mmp2 is a more important gene in explaining tumor volumes across many samples as it splits 21 and 32 samples based on their expression levels and these expression levels very highly relate to the tumor sizes. Referencing the gene through the available literature, Mmp2 is an already known gene related to dysfunction in liver cancer.
 					</p>
 				</div>
 			</div>
@@ -56,8 +56,29 @@
 				<div class="col-md-12">
 					<img src="{% static 'images/portfolio/decisionTreew5.png' %}" 
 					width=100%;>
+					<br><br>
+					<p align="left">
+						Using these machine learning models, I created a 'gene expression signature' for the drug's effects in liver cancer. This signature included over a hundred genes which over hundreds of learning iterations were found to be the most consistently important in predicting tumor volumes in each sample. Once this gene signature was acquired, one can make use of online databases of the gene expressions in various different types of cancers. The goal was to use our recently acquired drug signature for live cancer and apply it to the gene expression patterns of other forms of cance. Doing so, I created a ranking of cancers which were most likely to respond positively to this drug. The hope is that using this methodology we can direct future research and repurpose this drug to new disease which it could potentially be useful in fighting.
+					</p>
+					<br>
+					<p align="left">
+						Below are some examples of the results generated from this comparison. By performing a 'Nearest Template Prediction' on the cancer patients of each type of cancer I was able to categorize patients into those who naturally had gene signatures which matched the effects of the novel drug, and those who do not. Creating survival curves for these two distinct groups then gives an estimate of which types of cancers this novel drug could potentially be effective against. On the left is a cancer type which shows a significant increase in survival when patients have a gene expression similar to the drug signature, while on the right is a cancer which appears to show no difference in survival among patients.
+					</p>
+					<br>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<img src="{% static 'images/portfolio/kaplanMeierCancerA.png' %}" 
+					width=100%;>
+				</div>
+				<div class="col-md-6">
+					<img src="{% static 'images/portfolio/kaplanMeierCancerB.png' %}" 
+					width=100%;>
+				</div>
+			</div>
+
 			<br><hr><br>
 			<div class="row">
 				<h4>2. Weighted Gene Correlational Network Analysis (WGCNA) & Key Drivers</h4>
