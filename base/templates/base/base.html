@@ -31,10 +31,10 @@
         }
 
         .main {
-            margin-left: 180px;
+            margin-left: 100px;
             padding: 0px 12px;
-            transition: margin-left 0.3s, width 0.3s;
-            width: calc(100% - 180px);
+            transition: margin-left 0.3s ease-in-out;
+            width: calc(100% - 120px);
         }
 
         /* Hide sidebar on mobile */
@@ -62,7 +62,7 @@
         }
 
         /* Show toggle button on small screens */
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .menu-toggle {
                 display: block;
             }
@@ -73,7 +73,7 @@
                 transform: translateX(0);
             }
             .menu-toggle.open {
-                left: 170px; /* Move button out of the way when menu is open */
+                left: 160px; /* Adjust button position */
             }
             .main {
                 margin-left: 0;
