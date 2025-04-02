@@ -5,57 +5,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style type="text/css">
-		.sidenav {
-			height:100%;
-			width:160px;
-			position: fixed;
-			z-index:1;
-			top:0;
-			left:0;
-			background-color:#111;
-			overflow-x: :hidden;
-			padding-top:20px;
-		}
+    <style>
+        /* Sidebar styles */
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            padding-top: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-		.sidenav a {
-			padding:6px 4px 6px 16px;
-			text-decoration: none;
-			font-size:25px;
-			color: #818181;
-			display:block;
-		} 
+        .sidenav a {
+            padding: 10px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
 
-		.sidenav a:hover{
-			color:#f1f1f1;
-		}
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
 
-		.main{
-			margin-left:80px;
-			padding: 0px 12px;
-		}
+        .main {
+            margin-left: 180px;
+            padding: 0px 12px;
+            transition: margin-left 0.3s, width 0.3s;
+            width: calc(100% - 180px);
+        }
 
-	</style>
+        /* Hide sidebar on mobile */
+        .sidenav.hidden {
+            transform: translateX(-100%);
+        }
 
-	<title>Jack Brons</title>
-	<link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        .main.full {
+            margin-left: 0;
+            width: 100%;
+        }
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	
+        /* Toggle button */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: #000;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        /* Show toggle button on small screens */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .sidenav {
+                transform: translateX(-100%);
+            }
+            .sidenav.open {
+                transform: translateX(0);
+            }
+            .menu-toggle.open {
+                left: 170px; /* Move button out of the way when menu is open */
+            }
+            .main {
+                margin-left: 0;
+                width: 100%;
+            }
+            .main.shifted {
+                margin-left: 180px;
+                width: calc(100% - 180px);
+            }
+        }
+    </style>
+
+    <title>Jack Brons</title>
+    <link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-	<div class="sidenav">
-		<a href="/">Home</a>
-		<a href="/portfolio">Portfolio</a>
-		<!-- <a href="/polls">Polls</a> -->
-		<a href="/about">About</a>
-		<a href="/contact">Contact</a>
-	</div>
-	<br>
-	<div class="main", id="content", name="content">
-	{% block content %}
-	{% endblock %}
-	</div>
+    <!-- Toggle button -->
+    <button class="menu-toggle" id="menuButton" onclick="toggleMenu()">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidenav" id="sidebar">
+        <a href="/">Home</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main" id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script>
+        function toggleMenu() {
+            let sidebar = document.getElementById("sidebar");
+            let content = document.getElementById("content");
+            let menuButton = document.getElementById("menuButton");
+
+            sidebar.classList.toggle("open");
+            menuButton.classList.toggle("open");
+            
+            if (sidebar.classList.contains("open")) {
+                content.classList.add("shifted");
+            } else {
+                content.classList.remove("shifted");
+            }
+        }
+    </script>
 </body>
+</html>
