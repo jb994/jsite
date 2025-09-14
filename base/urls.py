@@ -14,4 +14,6 @@ urlpatterns = [
 	path('portfolio/predictive-medicine', views.predictive_medicine),
 	path('portfolio/splicing', views.splicing),
 	path('portfolio/pathway-analysis', views.pathway_analysis),
+	path('portfolio/cow-ml', views.cow_ml),
+	path('portfolio/spatial-transcriptomics', views.spatial_transcriptomics),
 ]

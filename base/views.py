@@ -35,3 +35,9 @@ def splicing(request):
 
 def pathway_analysis(request):
 	return render(request, 'portfolio/pathway-analysis.html')
+
+def cow_ml(request):
+	return render(request, 'portfolio/cow-ml.html')
+
+def spatial_transcriptomics(request):
+	return render(request, 'portfolio/spatial-transcriptomics.html')

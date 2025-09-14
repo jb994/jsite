@@ -1,0 +1,51 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPORTFOLIO</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="card card-body h-100 border-info" id="profile-wrapper">
+			<h2>&nbsp&nbspSpatial Transcriptomics</h2>
+			<hr>
+
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						Spatial transcriptomics is an extension of single-cell RNA sequencing that not only measures gene expression but also preserves the physical location of cells within tissue. This allows us to study not just what genes are active in each cell type, but also how these cells are organized in space and interact with one another.
+						<br><br>
+						The pipeline begins the same as single-cell RNA-seq; filtering, normalization, and then clustering of cells based on their shared expression patterns. As with single-cell data, this step helped separate the tissue into distinct cellular subtypes. I then carried out cell type annotation, integrating marker gene information and prior biological knowledge to identify key populations in the tissue.
+					</p>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col-md-5">
+					<img src="{% static 'images/portfolio/spatialTranscriptomics/CD44.png' %}"
+					width=79%;>
+				</div>
+				<div class="col-md-1"></div>
+				<div class="col-md-5">
+					<img src="{% static 'images/portfolio/spatialTranscriptomics/slide2UMAP.png' %}"
+					width=100%;>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						<br><br>
+						One advantage of spatial data is that it allows us to investigate cell–cell relationships directly within the tissue context. To do this, I calculated the average distances between two selected cell subtypes, stratifying by specific gene expression states. This revealed how expression of certain genes can influence whether two cell types are positioned closer together or further apart, offering insight into local cell–cell interactions and potential signaling mechanisms.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</div>
+{% endblock %}
+</html>

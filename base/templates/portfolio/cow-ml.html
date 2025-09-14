@@ -1,0 +1,77 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPORTFOLIO</h1>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="card card-body h-100 border-info" id="profile-wrapper">
+			<h2>&nbsp&nbspObject Detection for Cattle Stress Quantification</h2>
+			<hr>
+
+			<div class="row">
+				<div class="col-md-7">
+					<p align="left">
+						<br><br>
+						The task was as follows - given thousands of time-series, infrared images of cows can we quantify the levels of stress they are experiencing using AI and automated systems? Part of the motivation is that cattle, and livestock more in general, produce better and more bountiful goods in general when comfortable as opposed to stressed. In the case of cows in particular, cattle which are stressed typically eat less and gain less week cutting into beef production. Dairy cows meanwhile produce less milk when under circumstances of stress. Therefore there is an economic rationale to being able to determine which cows are facing the highest levels of stress and focus attention on their wellbeing in particular.<br>
+						<br>
+						The first step in creating this automated stress detection model was to actually be able to detect the cow within the given images. An publicly available and deeply trained object detection software was used for this task to identify which images had clear visuals of the cows and where exactly they were in the image. 
+					</p>
+				</div>
+				<div class="col-md-5">
+					<img src="{% static 'images/portfolio/cows/cowWithBox.png' %}"
+					width=100%;>
+				</div>
+			</div>
+
+			<br><hr><br>
+
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						Consulting with livestock researchers a few proxies were determined which could indicate levels of higher stress in cows, the first being high heat emissions. Cows which are emitting more heat are typically doing so because of higher levels of stress and discomfort. In order to determine this value, these images were converted into heat scale and then eyes of the animal were detected via increased heat patterns on the face. Isolating the eye region in this case was useful as it is typically one of the regions with the highest heat emmissions. Once the eye is isolated it allowed for the calculation of a score for each cow and to be able to extrapolate that over the time-series images for an overall heat level of each specimen.<br>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<img src="{% static 'images/portfolio/cows/cowEyeDetectionFlowChart.png' %}"
+					width=100%;>
+				</div>
+			</div>
+
+			<br><hr><br>
+
+			<div class="row">
+				<div class="col-md-12">
+					<p align="left">
+						Additionally, a proxy for breathing rate was calculated by using machine learning to detect the nose and nostrils of each cow, observing their change in size over time, and using this to measure the peaks and valleys. Assuming the increases and decreases in nostril size follow a sinusoidal pattern of repetition we can automatically detect the peaks and valleys to estimate the number of seconds it takes for a full inhale and exhale. Cows with higher breathing rates were also scored as having higher levels of stress. Combining all of these variables allowed us to finally create a multi-factor and stable way of predicting the stress levels of livestock, allowing for targeted treatment of specific specimens for the increase of productivity and output.
+					</p>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6">
+					<br><br><br>
+					<img src="{% static 'images/portfolio/cows/cowNoseDetectionFlowChart.png' %}"
+					width=100%;>
+				</div>
+				
+				<div class="col-md-6">
+					<img src="{% static 'images/portfolio/cows/cowBreathingGraph.png' %}"
+					width=100%;>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<br>
+</div>
+{% endblock %}
+</html>
