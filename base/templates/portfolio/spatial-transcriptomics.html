@@ -35,13 +35,33 @@
 					width=100%;>
 				</div>
 			</div>
+
+			<br><hr><br>
+
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-6">
 					<p align="left">
-						<br><br>
-						One advantage of spatial data is that it allows us to investigate cell–cell relationships directly within the tissue context. To do this, I calculated the average distances between two selected cell subtypes, stratifying by specific gene expression states. This revealed how expression of certain genes can influence whether two cell types are positioned closer together or further apart, offering insight into local cell–cell interactions and potential signaling mechanisms.
+						
+						One advantage of spatial data is that it allows us to investigate cell–cell relationships directly within the tissue context. To do this, once can calculate the average distances between two selected cell subtypes, stratifying by specific gene expression states. This allows researchers to witness cross-talk between cell populations - observe the changes in gene expressions between cells which are near each other and cells which are further away. In the example below we can see a population of epithelial cells amoung other cells. The expression of the gene COL1A1 is indicated as it is a marker for fibroblasts. With spatial technology we can now differentiate between epithelial cells which are near to fibroblasts and those which are further away and see if this spatial relationship does exhibit some type of gene signaling cross-talk and interaction. Differential Gene Expression (DEG) Analysis can then find the genes whose expression is changed by a statistically significant amount between these cell populations.
 					</p>
 				</div>
+				<div class="col-md-3">
+					<img src="{% static 'images/portfolio/spatialTranscriptomics/zoomSpatialDimPlot.png' %}"
+					width=100%;>
+				</div>
+				<div class="col-md-3">
+					<img src="{% static 'images/portfolio/spatialTranscriptomics/spatialZoomFeaturePlot_COL1A1.png' %}"
+					width=100%;>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<img src="{% static 'images/portfolio/spatialTranscriptomics/spatialVlnPlot_3Genes.png' %}"
+					width=100%;>
+				</div>
+				<div class="col-md-2"></div>
 			</div>
 		</div>
 	</div>
