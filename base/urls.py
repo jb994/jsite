@@ -5,6 +5,7 @@ urlpatterns = [
 	path('', views.home),
 	path('portfolio', views.portfolio),
 	path('about', views.about),
+	path('publications', views.publications),
 	path('contact', views.contact),
 	path('portfolio/singlecell', views.singlecell),
 		path('portfolio/singlecell/cellTypes', views.singlecell_cell_types),

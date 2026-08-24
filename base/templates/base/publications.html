@@ -1,0 +1,34 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block content %}
+
+<div class="main">
+	<div class="row justify-content-left">
+		<h1>&nbsp&nbspPUBLICATIONS</h1>
+	</div>
+
+	<hr>
+
+	{% for pub in publications %}
+	<div class="row">
+	<div class="card card-body h-100" style="margin-bottom:18px;">
+		<p style="margin-bottom:0; font-size:16px; line-height:1.5;">
+			{{ forloop.counter }}.&nbsp; {{ pub.authors|safe }} {{ pub.title }} {{ pub.journal }}. {{ pub.year }}{% if pub.volinfo %};{{ pub.volinfo }}{% endif %}. doi:<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">{{ pub.doi }}</a>
+		</p>
+	</div>
+	</div>
+	{% empty %}
+	<div class="row">
+	<div class="card card-body h-100">
+		<p style="margin-bottom:0;">No publications yet.</p>
+	</div>
+	</div>
+	{% endfor %}
+
+	<br>
+</div>
+{% endblock %}
+</html>
